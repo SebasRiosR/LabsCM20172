@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">LabsCM20172</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="titulo">Iniciar sesión</string>
-    <string name="pass">Contraseña:</string>
-    <string name="mail">Correo:</string>
-    <string name="login">Log-in</string>
+    <string name="iniciarS">Iniciar sesión</string>
+    <string name="pass">Contraseña</string>
+    <string name="mail">Correo electrónico</string>
+    <string name="login">Iniciar sesión</string>
     <string name="signup">Registrarse</string>
     <string name="nameApp">Appartamento</string>
     <string name="title_activity_main2">Main2Activity</string>
