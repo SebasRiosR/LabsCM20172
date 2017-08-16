@@ -29,5 +29,4 @@
         <activity android:name=".Activity_informacion"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
-
 </manifest>
