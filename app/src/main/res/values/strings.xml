@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">LabsCM20172</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="titulo">Iniciar sesión</string>
+    <string name="pass">Contraseña:</string>
+    <string name="mail">Correo:</string>
+    <string name="login">Log-in</string>
+    <string name="signup">Registrarse</string>
+    <string name="nameApp">Appartamento</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="configuracion">Ajustes</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="about">Información</string>
+    <string name="informacion">Desarollado por Brayan Suárez y Sebastian Rios para el curso de Computación Móvil</string>
+    <string name="proximamente">Proximamente se podrá agregar apartamentos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
