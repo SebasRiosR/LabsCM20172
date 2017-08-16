@@ -6,6 +6,8 @@
     <string name="mail">Correo electrónico</string>
     <string name="login">Iniciar sesión</string>
     <string name="signup">Registrarse</string>
+    <string name="finalizarReg">Finalizar registro</string>
+    <string name="regresarLogin">Volver al inicio de sesión</string>
     <string name="nameApp">Appartamento</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="bienvenido">Bienvenido</string>
