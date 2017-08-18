@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20172.labscm20172;
+package co.edu.udea.compumovil.gr01_20172.lab1;
 
 import android.content.Intent;
 import android.os.Build;

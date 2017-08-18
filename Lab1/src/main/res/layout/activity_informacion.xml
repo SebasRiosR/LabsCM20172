@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.udea.compumovil.gr01_20172.labscm20172.Activity_informacion">
+    tools:context="co.edu.udea.compumovil.gr01_20172.lab1.Activity_informacion">
 
     <TextView
         android:id="@+id/textView2"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context="co.edu.udea.compumovil.gr01_20172.labscm20172.RegisterActivity">
+    tools:context="co.edu.udea.compumovil.gr01_20172.lab1.RegisterActivity">
 
     <TextView
         android:layout_width="wrap_content"

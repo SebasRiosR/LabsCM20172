@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.edu.udea.compumovil.gr01_20172.labscm20172">
+    package="co.edu.udea.compumovil.gr01_20172.lab1">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name="co.edu.udea.compumovil.gr01_20172.lab1.SplashActivity"
             android:label="Appartamento"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -19,14 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"
+        <activity android:name="co.edu.udea.compumovil.gr01_20172.lab1.RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name="co.edu.udea.compumovil.gr01_20172.lab1.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".MainActivity"
+        <activity android:name="co.edu.udea.compumovil.gr01_20172.lab1.MainActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity_informacion"
+        <activity android:name="co.edu.udea.compumovil.gr01_20172.lab1.Activity_informacion"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 </manifest>
