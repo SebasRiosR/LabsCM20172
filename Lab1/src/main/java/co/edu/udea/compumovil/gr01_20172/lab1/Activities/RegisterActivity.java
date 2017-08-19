@@ -22,7 +22,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView tvLogin;
     private EditText etEmail, etPass, etPass2, etName, etLastName, etPhone, etAddress, etCity;
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
     private DbHelper db;
     private User user = new User();
 

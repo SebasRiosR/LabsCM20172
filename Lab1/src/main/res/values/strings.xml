@@ -19,6 +19,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Configuraciones</string>
     <string name="title_activity_register2">RegisterActivity2</string>
+    <string name="createA">Crear una cuenta</string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/login_bg">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,16 +110,22 @@
                 android:orientation="horizontal">
                 <RadioButton
                     android:id="@+id/radioB1"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hombre"/>
                 <RadioButton
                     android:id="@+id/radioB2"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mujer"/>
                 <RadioButton
                     android:id="@+id/radioB3"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Otro"/>
@@ -165,6 +171,7 @@
             android:text="@string/regresarLogin"
             android:id="@+id/tvLogin"
             android:textColor="@color/white"
+            android:layout_marginBottom="15dp"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

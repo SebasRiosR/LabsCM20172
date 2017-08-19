@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:gravity="center">
     <ProgressBar
         android:id="@+id/splash_screen_progress_bar"
@@ -21,6 +21,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/nameApp"
+        android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold"/>
 </LinearLayout>

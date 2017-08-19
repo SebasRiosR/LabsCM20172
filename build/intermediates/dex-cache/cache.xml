@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sebastian\Downloads\android-design-library-master\LabsCM20172\Lab1\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Sebastian\Downloads\android-design-library-master\LabsCM20172\Lab1\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_716ce367cbb1e3247c165c3505a4cbc7b0cf6c94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sebastian\Downloads\android-design-library-master\LabsCM20172\Lab1\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="74176d4ede263ded2a1ce413c029a62b15e71bd2">
+        <dex dex="C:\Users\Sebastian\Downloads\android-design-library-master\LabsCM20172\Lab1\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b55a1ea89d8ca2acc907a7bbbc226c1a82321d4d\classes.dex" />
+    </item>
+
+</items>
