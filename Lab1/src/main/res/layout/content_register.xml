@@ -29,6 +29,8 @@
             android:inputType="textEmailAddress"
             android:id="@+id/etEmail"
             android:hint="@string/mail"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_marginTop="@dimen/marginFi"
             android:layout_marginBottom="@dimen/m10"
@@ -44,6 +46,8 @@
             android:layout_marginRight="@dimen/m10"
             android:hint="@string/names"
             android:inputType="textPersonName"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"/>
 
         <EditText
@@ -52,6 +56,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="@string/lastNames"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_marginBottom="@dimen/m10"
             android:layout_marginRight="@dimen/m10"
@@ -63,6 +69,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="@string/phone"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_marginBottom="@dimen/m10"
             android:layout_marginRight="@dimen/m10"
@@ -77,6 +85,8 @@
             android:layout_marginRight="@dimen/m10"
             android:hint="@string/address"
             android:inputType="textPersonName"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
         <EditText
@@ -85,6 +95,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="@string/city"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:layout_marginBottom="@dimen/m10"
             android:layout_marginRight="@dimen/m10"
@@ -138,6 +150,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="@string/pass"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="@dimen/m10"
@@ -150,6 +164,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="@string/cPass"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="@dimen/m10"

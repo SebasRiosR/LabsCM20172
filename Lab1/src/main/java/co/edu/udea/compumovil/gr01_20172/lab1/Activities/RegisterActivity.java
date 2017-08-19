@@ -22,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView tvLogin;
     private EditText etEmail, etPass, etPass2, etName, etLastName, etPhone, etAddress, etCity;
     private RadioGroup radioGroup;
+    private RadioButton r1, r2, r3;
     private DbHelper db;
     private User user = new User();
 
@@ -44,6 +45,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         radioGroup = (RadioGroup)findViewById(R.id.groupB);
         reg.setOnClickListener(this);
         tvLogin.setOnClickListener(this);
+        r1 = (RadioButton)findViewById(R.id.radioB1);
+        r2 = (RadioButton)findViewById(R.id.radioB2);
+        r3 = (RadioButton)findViewById(R.id.radioB3);
     }
 
     @Override
@@ -61,30 +65,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void register(){
-        String sex = this.findViewById(radioGroup.getCheckedRadioButtonId()).toString();
-        if(etEmail.getText().toString().isEmpty() && etPass.getText().toString().isEmpty()){
-            displayToast("Username/password field empty");
-        } else if (!(etPass.getText().toString().equals(etPass2.getText().toString()))){
-            displayToast("Username/las contraseñas no coinciden");
+        String correo = etEmail.getText().toString();
+        String contraseña = etPass.getText().toString();
+        String nombres = etName.getText().toString();
+        String apellidos = etLastName.getText().toString();
+        String telefono = etPhone.getText().toString();
+        String direccion = etAddress.getText().toString();
+        String ciudad = etCity.getText().toString();
+        if(correo.isEmpty() || contraseña.isEmpty() || nombres.isEmpty() || apellidos.isEmpty()
+                || telefono.isEmpty() || direccion.isEmpty() || ciudad.isEmpty() || (!r1.isChecked()
+                && !r2.isChecked() && !r3.isChecked())){
+            displayToast(getString(R.string.error1));
+        } else if (!(contraseña.equals(etPass2.getText().toString()))){
+            displayToast(getString(R.string.error2));
             etPass.setText("");
             etPass2.setText("");
         } else {
-            user.setCorreo(etEmail.getText().toString());
-            user.setContraseña(etPass.getText().toString());
-            user.setNombres(etName.getText().toString());
-            user.setApellidos(etLastName.getText().toString());
-            user.setTelefono(etPhone.getText().toString());
-            user.setDireccion(etAddress.getText().toString());
-            user.setCiudad(etCity.getText().toString());
-            if (sex.isEmpty()){
-                user.setSexo(sex);
-            } else {
-                user.setSexo("");
-            }
+            String sex = this.findViewById(radioGroup.getCheckedRadioButtonId()).toString();
+            user.setCorreo(correo);
+            user.setContraseña(contraseña);
+            user.setNombres(nombres);
+            user.setApellidos(apellidos);
+            user.setTelefono(telefono);
+            user.setDireccion(direccion);
+            user.setCiudad(ciudad);
+            user.setSexo(sex);
             db.addUser(user);
-            displayToast("User registered");
+            displayToast(getString(R.string.confirmacion));
             finish();
         }
     }

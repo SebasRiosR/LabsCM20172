@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_config) {
-            // Handle the camera action
+            //implement
         } else if (id == R.id.nav_logout) {
             Session session = new Session(this);
             session.logout();
@@ -82,10 +82,6 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.nav_info) {
             startActivity(new Intent(MainActivity.this, Activity_informacion.class));
-        } else if (id == R.id.nav_exit) {
-            android.os.Process.killProcess(android.os.Process.myPid());
-            finish();
-            System.exit(1);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

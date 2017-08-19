@@ -2,7 +2,6 @@ package co.edu.udea.compumovil.gr01_20172.lab1.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.ProgressBar;
 import co.edu.udea.compumovil.gr01_20172.lab1.R;
 
 import static android.R.color.black;
-import static android.R.color.white;
 
 public class SplashActivity extends Activity {
 
@@ -26,7 +24,6 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         mProgress = (ProgressBar) findViewById(R.id.splash_screen_progress_bar);
         mProgress.getProgressDrawable().setColorFilter(getResources().getColor(black), PorterDuff.Mode.SRC_IN);
-        //mProgress.setProgressTintList(ColorStateList.valueOf(getResources().getColor(black)));
         // Start lengthy operation in a background thread
         new Thread(new Runnable() {
             public void run() {

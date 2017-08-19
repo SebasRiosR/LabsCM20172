@@ -5,6 +5,7 @@
     <string name="cPass">Confirmar contraseña</string>
     <string name="mail">Correo electrónico</string>
     <string name="login">Iniciar sesión</string>
+    <string name="login2">Inicia sesión</string>
     <string name="signup">Registrarse</string>
     <string name="finalizarReg">Crear una cuenta</string>
     <string name="regresarLogin">Volver al inicio de sesión</string>
@@ -32,4 +33,8 @@
     <string name="other">Otro</string>
     <string name="toSign">¿Eres nuevo? Regístrate ahora</string>
     <string name="item">Información</string>
+    <string name="error1">Falta información en algún campo</string>
+    <string name="error2">Las contraseñas no coinciden</string>
+    <string name="error3">Usuario o contraseña incorrectos</string>
+    <string name="confirmacion">La cuenta ha sido creada</string>
 </resources>

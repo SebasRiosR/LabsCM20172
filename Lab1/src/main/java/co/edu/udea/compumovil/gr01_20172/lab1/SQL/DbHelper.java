@@ -78,25 +78,20 @@ public class DbHelper extends SQLiteOpenHelper {
 
         long id = db.insert(USER_TABLE, null, values);
         db.close();
-        long otro = 10;
-        Log.d("TAG", "user inserted" + id + "Este es otro " + otro);
+        Log.d("TAG", "usuario registrado con ID: " + id);
     }
 
     public boolean getUser(String email, String pass){
         Log.d("TAG", "Estoy buscando");
         String selectQuery = "select * from  " + USER_TABLE + " where " +
                 COLUMN_EMAIL + " = " + "'"+email+"'" + " and " + COLUMN_PASS + " = " + "'"+pass+"'";
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        //cursor.moveToFirst();
         if (cursor.getCount() != 0) {
-
             return true;
         }
         cursor.close();
         db.close();
-
         return false;
     }
 }

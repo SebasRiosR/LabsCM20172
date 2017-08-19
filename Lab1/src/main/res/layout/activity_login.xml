@@ -36,6 +36,8 @@
             android:layout_marginTop="@dimen/marginFi"
             android:hint="@string/mail"
             android:inputType="textEmailAddress"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
 
@@ -49,6 +51,8 @@
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:fontFamily="sans-serif"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"/>
 
         <Button
@@ -59,7 +63,7 @@
             android:layout_marginLeft="@dimen/m10"
             android:layout_marginRight="@dimen/m10"
             android:onClick="login"
-            android:text="@string/login" />
+            android:text="@string/login2" />
 
         <TextView
             android:id="@+id/btnReg"
