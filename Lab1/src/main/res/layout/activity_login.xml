@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/login_bg"
-    tools:context="co.edu.udea.compumovil.gr01_20172.lab1.Activities.LoginActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="co.edu.udea.compumovil.gr01_20172.lab1.Activities.LoginActivity"
+    android:background="@drawable/login_bg">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:padding="20dp"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:id="@+id/etEmail"
-        android:hint="@string/mail"
-        android:textColorHint="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="co.edu.udea.compumovil.gr01_20172.lab1.Activities.LoginActivity">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/marginTi"
+            android:padding="@dimen/marginTi"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sizeTi" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginTop="@dimen/marginFi"
+            android:hint="@string/mail"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/white" />
 
 
-    <EditText
-        android:id="@+id/etPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/pass"
-        android:textColorHint="@color/white"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColorLink="#000000"
-        android:shadowColor="#000000"
-        />
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:fontFamily="sans-serif"
+            android:textColorHint="@color/white"/>
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="login"/>
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m5"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:onClick="login"
+            android:text="@string/login" />
 
-    <Button
-        android:id="@+id/btnReg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/signup"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="register"/>
-</LinearLayout>
+        <TextView
+            android:id="@+id/btnReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:onClick="register"
+            android:text="@string/toSign"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

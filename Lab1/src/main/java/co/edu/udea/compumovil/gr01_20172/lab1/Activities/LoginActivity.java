@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import co.edu.udea.compumovil.gr01_20172.lab1.SQL.DbHelper;
@@ -13,7 +14,8 @@ import co.edu.udea.compumovil.gr01_20172.lab1.R;
 import co.edu.udea.compumovil.gr01_20172.lab1.Helpers.Session;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button login, register;
+    private Button login;
+    TextView register;
     private EditText etEmail, etPass;
     private DbHelper db;
     private Session session;
@@ -25,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         db = new DbHelper(this);
         session = new Session(this);
         login = (Button)findViewById(R.id.btnLogin);
-        register = (Button)findViewById(R.id.btnReg);
+        register = (TextView) findViewById(R.id.btnReg);
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPass = (EditText)findViewById(R.id.etPass);
         login.setOnClickListener(this);

@@ -17,10 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:text="@string/signup"
-            android:textSize="30sp"
-            android:padding="20dp"
+            android:layout_marginTop="@dimen/marginTi"
+            android:text="@string/createA"
+            android:textSize="@dimen/sizeTi"
+            android:padding="@dimen/marginFi"
             android:textColor="@color/white"/>
 
         <EditText
@@ -30,52 +30,52 @@
             android:id="@+id/etEmail"
             android:hint="@string/mail"
             android:textColorHint="@color/white"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginTop="@dimen/marginFi"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:hint="@string/names"
             android:inputType="textPersonName"
-            android:hint="Nombres"
-            android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:textColorHint="@color/white"/>
 
         <EditText
             android:id="@+id/etLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Apellidos"
+            android:hint="@string/lastNames"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Teléfono"
+            android:hint="@string/phone"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <EditText
             android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:hint="Dirección"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:hint="@string/address"
             android:inputType="textPersonName"
             android:textColorHint="@color/white" />
 
@@ -84,25 +84,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Ciudad"
+            android:hint="@string/city"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="14dp">
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginTop="@dimen/m5"
+            android:layout_marginLeft="@dimen/m14">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:textSize="18dp"
-                android:text="Sexo:"
-                android:layout_marginRight="5dp"/>
+                android:textSize="@dimen/size18"
+                android:text="@string/sex"
+                android:layout_marginRight="@dimen/m5"/>
             <RadioGroup
                 android:id="@+id/groupB"
                 android:layout_width="match_parent"
@@ -114,21 +114,21 @@
                     android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hombre"/>
+                    android:text="@string/male"/>
                 <RadioButton
                     android:id="@+id/radioB2"
                     android:textColor="@color/white"
                     android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mujer"/>
+                    android:text="@string/female"/>
                 <RadioButton
                     android:id="@+id/radioB3"
                     android:textColor="@color/white"
                     android:buttonTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otro"/>
+                    android:text="@string/other"/>
             </RadioGroup>
         </LinearLayout>
 
@@ -137,31 +137,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Contraseña"
+            android:hint="@string/pass"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <EditText
             android:id="@+id/etPass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Repita la contraseña"
+            android:hint="@string/cPass"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"/>
 
         <Button
             android:id="@+id/btnReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/finalizarReg"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:text="@string/signup"
+            android:layout_marginBottom="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:layout_marginLeft="@dimen/m10"
             android:onClick="register"/>
 
         <TextView
@@ -171,7 +173,7 @@
             android:text="@string/regresarLogin"
             android:id="@+id/tvLogin"
             android:textColor="@color/white"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/m10"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
