@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20172.lab1;
+package co.edu.udea.compumovil.gr01_20172.lab1.Helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;

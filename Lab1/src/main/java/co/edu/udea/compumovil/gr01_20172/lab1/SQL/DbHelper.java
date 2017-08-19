@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20172.lab1;
+package co.edu.udea.compumovil.gr01_20172.lab1.SQL;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,11 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import co.edu.udea.compumovil.gr01_20172.lab1.Helpers.User;
+
 /**
  * Created by Administrator on 5/5/2016.
  */
 public class DbHelper extends SQLiteOpenHelper {
-    public static final String TAG = DbHelper.class.getSimpleName();
     public static final String DB_NAME = "myapp.db";
     public static final int DB_VERSION = 1;
 
@@ -36,7 +37,13 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String CREATE_TABLE_USERS = "CREATE TABLE " + USER_TABLE + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_EMAIL + " TEXT,"
-            + COLUMN_PASS + " TEXT);";
+            + COLUMN_PASS + " TEXT,"
+            + COLUMN_NOMBRES + " TEXT,"
+            + COLUMN_APELLIDOS + " TEXT,"
+            + COLUMN_SEXO + " TEXT,"
+            + COLUMN_TELEFONO + " TEXT,"
+            + COLUMN_DIRECCION + " TEXT,"
+            + COLUMN_CIUDAD + " TEXT)";
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -56,29 +63,34 @@ public class DbHelper extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      * */
-    public void addUser(String email, String password) {
+    public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_EMAIL, email);
-        values.put(COLUMN_PASS, password);
+        values.put(COLUMN_EMAIL, user.getCorreo());
+        values.put(COLUMN_PASS, user.getContraseña());
+        values.put(COLUMN_NOMBRES, user.getNombres());
+        values.put(COLUMN_APELLIDOS, user.getApellidos());
+        values.put(COLUMN_SEXO, user.getSexo());
+        values.put(COLUMN_TELEFONO, user.getTelefono());
+        values.put(COLUMN_DIRECCION, user.getDireccion());
+        values.put(COLUMN_CIUDAD, user.getCiudad());
 
         long id = db.insert(USER_TABLE, null, values);
         db.close();
-
-        Log.d(TAG, "user inserted" + id);
+        long otro = 10;
+        Log.d("TAG", "user inserted" + id + "Este es otro " + otro);
     }
 
     public boolean getUser(String email, String pass){
-        //HashMap<String, String> user = new HashMap<String, String>();
+        Log.d("TAG", "Estoy buscando");
         String selectQuery = "select * from  " + USER_TABLE + " where " +
                 COLUMN_EMAIL + " = " + "'"+email+"'" + " and " + COLUMN_PASS + " = " + "'"+pass+"'";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        // Move to first row
-        cursor.moveToFirst();
-        if (cursor.getCount() > 0) {
+        //cursor.moveToFirst();
+        if (cursor.getCount() != 0) {
 
             return true;
         }

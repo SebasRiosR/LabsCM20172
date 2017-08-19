@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20172.lab1;
+package co.edu.udea.compumovil.gr01_20172.lab1.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import co.edu.udea.compumovil.gr01_20172.lab1.R;
+import co.edu.udea.compumovil.gr01_20172.lab1.Helpers.Session;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,6 +82,10 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.nav_info) {
             startActivity(new Intent(MainActivity.this, Activity_informacion.class));
+        } else if (id == R.id.nav_exit) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            finish();
+            System.exit(1);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20172.lab1;
+package co.edu.udea.compumovil.gr01_20172.lab1.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import co.edu.udea.compumovil.gr01_20172.lab1.SQL.DbHelper;
+import co.edu.udea.compumovil.gr01_20172.lab1.R;
+import co.edu.udea.compumovil.gr01_20172.lab1.Helpers.Session;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     private Button login, register;
@@ -53,8 +57,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(db.getUser(email,pass)){
             session.setLoggedin(true);
-            etEmail.setText("");
-            etPass.setText("");
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }else{

@@ -1,9 +1,11 @@
-package co.edu.udea.compumovil.gr01_20172.lab1;
+package co.edu.udea.compumovil.gr01_20172.lab1.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+
+import co.edu.udea.compumovil.gr01_20172.lab1.R;
 
 public class SplashActivity extends Activity {
 
