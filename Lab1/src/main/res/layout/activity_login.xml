@@ -23,7 +23,7 @@
             android:layout_marginTop="@dimen/marginTi"
             android:padding="@dimen/marginTi"
             android:text="@string/login"
-            android:textColor="@color/white"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/sizeTi" />
 
         <EditText
@@ -36,9 +36,9 @@
             android:layout_marginTop="@dimen/marginFi"
             android:hint="@string/mail"
             android:inputType="textEmailAddress"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
 
 
         <EditText
@@ -51,9 +51,9 @@
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:fontFamily="sans-serif"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"/>
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"/>
 
         <Button
             android:id="@+id/btnLogin"
@@ -75,7 +75,7 @@
             android:onClick="register"
             android:text="@string/toSign"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/white"
+            android:textColor="@color/colorAccent"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
