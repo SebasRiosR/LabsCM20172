@@ -6,6 +6,7 @@ package co.edu.udea.compumovil.gr01_20172.lab1.Helpers;
 
 public class User {
     private int id;
+    private String imagen;
     private String nombres;
     private String apellidos;
     private String sexo;
@@ -21,6 +22,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getNombres() {

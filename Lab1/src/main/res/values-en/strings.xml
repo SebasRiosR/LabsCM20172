@@ -16,4 +16,7 @@
     <string name="proximamente">Soon you will be able to add apartments.</string>
     <string name="regresarLogin">Return to log-in</string>
     <string name="signup">Sign-up</string>
+    <string name="toSign">¿Are you new? Register now</string>
+    <string name="createA">Create your account</string>
+    <string name="image">Add image</string>
 </resources>

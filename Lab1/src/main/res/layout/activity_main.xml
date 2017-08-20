@@ -22,4 +22,11 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
+    <ImageView
+        android:id="@+id/set_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
 </android.support.v4.widget.DrawerLayout>

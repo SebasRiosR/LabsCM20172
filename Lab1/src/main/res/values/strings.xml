@@ -37,4 +37,5 @@
     <string name="error2">Las contraseñas no coinciden</string>
     <string name="error3">Usuario o contraseña incorrectos</string>
     <string name="confirmacion">La cuenta ha sido creada</string>
+    <string name="image">Agregar imagen</string>
 </resources>
