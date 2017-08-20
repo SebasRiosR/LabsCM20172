@@ -6,6 +6,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -20,11 +22,17 @@ import co.edu.udea.compumovil.gr01_20172.lab1.R;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
     private Button reg;
     private TextView tvLogin;
-    private EditText etEmail, etPass, etPass2, etName, etLastName, etPhone, etAddress, etCity;
+    private EditText etEmail, etPass, etPass2, etName, etLastName, etPhone, etAddress;
+    private AutoCompleteTextView etCity;
     private RadioGroup radioGroup;
     private RadioButton r1, r2, r3;
     private DbHelper db;
     private User user = new User();
+    private String[] ciudades={"Medellín", "Arauca", "Barranquilla", "Cartagena", "Tunja",
+            "Manizales", "Florencia", "Yopal", "Popayán", "Valledupar", "Quibdó", "Montería",
+            "Bogotá", "Puerto Inírida", "Guaviare", "Neiva", "Riohacha", "Santa Marta",
+            "Villavicencio", "Pasto", "Cúcuta", "Mocoa", "Armenia", "Pereira", "San Andrés",
+            "Bucaramanga", "Sincelejo", "Ibagué", "Cali", "Mitú", "Puerto Carreño"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +49,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etLastName = (EditText)findViewById(R.id.etLastName);
         etPhone = (EditText)findViewById(R.id.etPhone);
         etAddress = (EditText)findViewById(R.id.etAddress);
-        etCity = (EditText)findViewById(R.id.etCity);
+        etCity = (AutoCompleteTextView) findViewById(R.id.etCity);
         radioGroup = (RadioGroup)findViewById(R.id.groupB);
         reg.setOnClickListener(this);
         tvLogin.setOnClickListener(this);
         r1 = (RadioButton)findViewById(R.id.radioB1);
         r2 = (RadioButton)findViewById(R.id.radioB2);
         r3 = (RadioButton)findViewById(R.id.radioB3);
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades);
+        etCity.setAdapter(adapter);
+        etCity.setThreshold(1);
     }
 
     @Override
