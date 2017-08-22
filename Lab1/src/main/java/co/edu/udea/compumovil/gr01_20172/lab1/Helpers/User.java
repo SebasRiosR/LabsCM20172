@@ -1,11 +1,8 @@
 package co.edu.udea.compumovil.gr01_20172.lab1.Helpers;
 
-/**
- * Created by Sebastian on 18/08/2017.
- */
-
 public class User {
-    private int id;
+    private String id;
+    private String fechaNacimiento;
     private String imagen;
     private String nombres;
     private String apellidos;
@@ -16,12 +13,20 @@ public class User {
     private String contraseña;
     private String ciudad;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fecha) {
+        this.fechaNacimiento = fecha;
     }
 
     public String getImagen() {

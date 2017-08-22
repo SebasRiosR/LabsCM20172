@@ -12,7 +12,7 @@
     <dimen name="m14">14dp</dimen>
     <dimen name="marginFi">20dp</dimen>
     <dimen name="marginTi">50dp</dimen>
-    <dimen name="sizeTi">40dp</dimen>
-    <dimen name="size18">18dp</dimen>
-    <dimen name="size24">24dp</dimen>
+    <dimen name="sizeTi">40sp</dimen>
+    <dimen name="size18">18sp</dimen>
+    <dimen name="size24">24sp</dimen>
 </resources>
