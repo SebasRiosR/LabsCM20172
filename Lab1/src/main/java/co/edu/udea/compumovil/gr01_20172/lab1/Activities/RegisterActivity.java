@@ -210,10 +210,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             if(fechaNac.isEmpty()){
                 textInputLayoutDate.setError(getString(R.string.error1));
                 errores++;
+            } else {
+                textInputLayoutDate.setError(null);
             }
             if (imagen.equals("android.resource://co.edu.udea.compumovil.gr01_20172.lab1/drawable/ic_photo")){
                 textInputLayoutImage.setError(getString(R.string.error1));
                 errores++;
+            } else {
+                textInputLayoutImage.setError(null);
             }
             if (correo.isEmpty()) {
                 textInputLayoutEmail.setError(getString(R.string.error1));
@@ -221,48 +225,63 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 errores++;
             } else if (!inputValidation.isInputEditTextEmail(etEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
                 errores++;
+            } else {
+                textInputLayoutEmail.setError(null);
             }
             if (contraseña.isEmpty()){
-                Log.d("TAG", "Entré");
                 textInputLayoutPass.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etPass);
                 errores++;
+            } else {
+                textInputLayoutPass.setError(null);
             }
             if (contraseña2.isEmpty()) {
-                Log.d("TAG", "Entré2");
                 textInputLayoutPass2.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etPass2);
                 errores++;
+            } else {
+                textInputLayoutPass2.setError(null);
             }
             if (nombres.isEmpty()) {
-                Log.d("TAG", "Entré3");
                 textInputLayoutName.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etName);
                 errores++;
+            } else {
+                textInputLayoutName.setError(null);
             }
             if (apellidos.isEmpty()) {
                 textInputLayoutLastName.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etLastName);
                 errores++;
+            } else {
+                textInputLayoutLastName.setError(null);
             }
             if (telefono.isEmpty()) {
                 textInputLayoutPhone.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etPhone);
                 errores++;
+            } else {
+                textInputLayoutPhone.setError(null);
             }
             if (direccion.isEmpty()) {
                 textInputLayoutAddress.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etAddress);
                 errores++;
+            } else {
+                textInputLayoutAddress.setError(null);
             }
             if (ciudad.isEmpty()) {
                 textInputLayoutCity.setError(getString(R.string.error1));
                 inputValidation.hideKeyboardFrom(etCity);
                 errores++;
+            } else {
+                textInputLayoutCity.setError(null);
             }
             if (!r1.isChecked() && !r2.isChecked() && !r3.isChecked()){
                 textInputLayoutSex.setError(getString(R.string.error1));
                 errores++;
+            } else {
+                textInputLayoutSex.setError(null);
             }
             if (!contraseña.equals(contraseña2)){
                 displayToast(getString(R.string.error2));
@@ -275,6 +294,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 errores++;
             }
             if (errores > 0){
+                displayToast(getString(R.string.error5));
                 return;
             }else {
                 int selectedId = radioGroup.getCheckedRadioButtonId();

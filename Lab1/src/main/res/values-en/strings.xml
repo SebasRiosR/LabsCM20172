@@ -60,4 +60,5 @@
     <string name="title_activity_data_update">Data update</string>
     <string name="error_message_email">Enter Valid Email</string>
     <string name="error4">The mail is already registered.</string>
+    <string name="error5">Information missing in some field</string>
 </resources>
