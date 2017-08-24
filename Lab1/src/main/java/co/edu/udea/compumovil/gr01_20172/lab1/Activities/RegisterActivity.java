@@ -29,8 +29,10 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
@@ -71,7 +73,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private DbHelper db;
     private User user = new User();
     private InputValidation inputValidation;
-    private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout textInputLayoutEmail, textInputLayoutName, textInputLayoutLastName, textInputLayoutPhone,
+                            textInputLayoutAddress, textInputLayoutCity, textInputLayoutPass, textInputLayoutPass2,
+                            textInputLayoutSex, textInputLayoutDate, textInputLayoutImage;
 
     int permisos = 0;
     private String pathImage = "android.resource://co.edu.udea.compumovil.gr01_20172.lab1/drawable/ic_photo";
@@ -108,6 +112,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         r2 = (RadioButton)findViewById(R.id.radioB2);
         r3 = (RadioButton)findViewById(R.id.radioB3);
         textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutName = (TextInputLayout) findViewById(R.id.textInputLayoutName);
+        textInputLayoutLastName = (TextInputLayout) findViewById(R.id.textInputLayoutLastName);
+        textInputLayoutPhone = (TextInputLayout) findViewById(R.id.textInputLayoutPhone);
+        textInputLayoutAddress = (TextInputLayout) findViewById(R.id.textInputLayoutAddress);
+        textInputLayoutCity = (TextInputLayout) findViewById(R.id.textInputLayoutCity);
+        textInputLayoutSex = (TextInputLayout) findViewById(R.id.textInputLayoutSex);
+        textInputLayoutDate = (TextInputLayout) findViewById(R.id.textInputLayoutDate);
+        textInputLayoutPass =  (TextInputLayout) findViewById(R.id.textInputLayoutPass);
+        textInputLayoutPass2 =  (TextInputLayout) findViewById(R.id.textInputLayoutPass2);
+        textInputLayoutImage =  (TextInputLayout) findViewById(R.id.textInputLayoutImage);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ciudades);
         etCity.setAdapter(adapter);
@@ -163,9 +177,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btnReg:
-                if (!inputValidation.isInputEditTextEmail(etEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-                    return;
-                }
                 register();
                 break;
             case R.id.tvLogin:
@@ -185,43 +196,104 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void register(){
         if(mayRequestStoragePermission()) {
-
-        String fechaNac = fechaNacimiento.getText().toString();
-        String imagen = pathImage;
-        String correo = etEmail.getText().toString();
-        String contraseña = etPass.getText().toString();
-        String nombres = etName.getText().toString();
-        String apellidos = etLastName.getText().toString();
-        String telefono = etPhone.getText().toString();
-        String direccion = etAddress.getText().toString();
-        String ciudad = etCity.getText().toString();
-        if(fechaNac.isEmpty() || imagen.isEmpty()  || imagen.equals("android.resource://co.edu.udea.compumovil.gr01_20172.lab1/drawable/ic_photo") || correo.isEmpty() || contraseña.isEmpty() || nombres.isEmpty() || apellidos.isEmpty()
-                || telefono.isEmpty() || direccion.isEmpty() || ciudad.isEmpty() || (!r1.isChecked()
-                && !r2.isChecked() && !r3.isChecked())){
-            displayToast(getString(R.string.error1));
-        } else if (!(contraseña.equals(etPass2.getText().toString()))){
-            displayToast(getString(R.string.error2));
-            etPass.setText("");
-            etPass2.setText("");
-        } else {
-            int selectedId = radioGroup.getCheckedRadioButtonId();
-            radioButton = (RadioButton) findViewById(selectedId);
-
-            String sex = radioButton.getText().toString();
-            user.setFechaNacimiento(fechaNac);
-            user.setImagen(imagen);
-            user.setCorreo(correo);
-            user.setContraseña(contraseña);
-            user.setNombres(nombres);
-            user.setApellidos(apellidos);
-            user.setTelefono(telefono);
-            user.setDireccion(direccion);
-            user.setCiudad(ciudad);
-            user.setSexo(sex);
-            db.addUser(user);
-            displayToast(getString(R.string.confirmacion));
-            finish();
-        }
+            String fechaNac = fechaNacimiento.getText().toString();
+            String imagen = pathImage;
+            String correo = etEmail.getText().toString();
+            String contraseña = etPass.getText().toString();
+            String contraseña2 = etPass2.getText().toString();
+            String nombres = etName.getText().toString();
+            String apellidos = etLastName.getText().toString();
+            String telefono = etPhone.getText().toString();
+            String direccion = etAddress.getText().toString();
+            String ciudad = etCity.getText().toString();
+            int errores = 0;
+            if(fechaNac.isEmpty()){
+                textInputLayoutDate.setError(getString(R.string.error1));
+                errores++;
+            }
+            if (imagen.equals("android.resource://co.edu.udea.compumovil.gr01_20172.lab1/drawable/ic_photo")){
+                textInputLayoutImage.setError(getString(R.string.error1));
+                errores++;
+            }
+            if (correo.isEmpty()) {
+                textInputLayoutEmail.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etEmail);
+                errores++;
+            } else if (!inputValidation.isInputEditTextEmail(etEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
+                errores++;
+            }
+            if (contraseña.isEmpty()){
+                Log.d("TAG", "Entré");
+                textInputLayoutPass.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etPass);
+                errores++;
+            }
+            if (contraseña2.isEmpty()) {
+                Log.d("TAG", "Entré2");
+                textInputLayoutPass2.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etPass2);
+                errores++;
+            }
+            if (nombres.isEmpty()) {
+                Log.d("TAG", "Entré3");
+                textInputLayoutName.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etName);
+                errores++;
+            }
+            if (apellidos.isEmpty()) {
+                textInputLayoutLastName.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etLastName);
+                errores++;
+            }
+            if (telefono.isEmpty()) {
+                textInputLayoutPhone.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etPhone);
+                errores++;
+            }
+            if (direccion.isEmpty()) {
+                textInputLayoutAddress.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etAddress);
+                errores++;
+            }
+            if (ciudad.isEmpty()) {
+                textInputLayoutCity.setError(getString(R.string.error1));
+                inputValidation.hideKeyboardFrom(etCity);
+                errores++;
+            }
+            if (!r1.isChecked() && !r2.isChecked() && !r3.isChecked()){
+                textInputLayoutSex.setError(getString(R.string.error1));
+                errores++;
+            }
+            if (!contraseña.equals(contraseña2)){
+                displayToast(getString(R.string.error2));
+                etPass.setText("");
+                etPass2.setText("");
+                errores++;
+            }
+            if(db.getUserEmail(correo)){
+                displayToast(getString(R.string.error4));
+                errores++;
+            }
+            if (errores > 0){
+                return;
+            }else {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                String sex = radioButton.getText().toString();
+                user.setFechaNacimiento(fechaNac);
+                user.setImagen(imagen);
+                user.setCorreo(correo);
+                user.setContraseña(contraseña);
+                user.setNombres(nombres);
+                user.setApellidos(apellidos);
+                user.setTelefono(telefono);
+                user.setDireccion(direccion);
+                user.setCiudad(ciudad);
+                user.setSexo(sex);
+                db.addUser(user);
+                displayToast(getString(R.string.confirmacion));
+                finish();
+            }
         }else {
             showExplanation();
         }
@@ -307,8 +379,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         outState.putString("file_path", pathImage);
         outState.putString("fecha_nacimiento", fechaNacimiento.getText().toString());
     }
-
-
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {

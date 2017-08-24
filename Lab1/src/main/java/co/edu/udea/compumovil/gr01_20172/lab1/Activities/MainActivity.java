@@ -1,8 +1,10 @@
 package co.edu.udea.compumovil.gr01_20172.lab1.Activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,12 +23,14 @@ import co.edu.udea.compumovil.gr01_20172.lab1.SQL.DbHelper;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView userImage;
+    //private ImageView userImage;
+    private ImageView colapseImage;
     private TextView nameUser, lastNameUser, sexUser, birthDayUser, telephoneUser, addressUser,
             emailUser, cityUser;
     private Session session;
     private static User usuario = new User();
     DbHelper db = new DbHelper(this);
+    private CollapsingToolbarLayout collapsingToolbar;
 
 
     @Override
@@ -50,9 +54,11 @@ public class MainActivity extends AppCompatActivity
         session = new Session(this);
         usuario = session.getUser();
 
-        userImage = (ImageView) findViewById(R.id.imageUser);
-        nameUser = (TextView)findViewById(R.id.userName);
-        lastNameUser = (TextView)findViewById(R.id.userLastName);
+        //userImage = (ImageView) findViewById(R.id.imageUser);
+        collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        colapseImage = (ImageView) findViewById(R.id.imageColapse);
+        //nameUser = (TextView)findViewById(R.id.userName);
+        //lastNameUser = (TextView)findViewById(R.id.userLastName);
         sexUser = (TextView)findViewById(R.id.userSex);
         birthDayUser = (TextView)findViewById(R.id.userBirthDate);
         telephoneUser = (TextView)findViewById(R.id.userTelephone);
@@ -125,9 +131,13 @@ public class MainActivity extends AppCompatActivity
     public void mostrarDatos(){
         Uri uri;
         uri = Uri.parse(usuario.getImagen());
-        userImage.setImageURI(uri);
-        nameUser.setText(usuario.getNombres());
-        lastNameUser.setText(usuario.getApellidos());
+        //userImage.setImageURI(uri);
+        colapseImage.setImageURI(uri);
+        //nameUser.setText(usuario.getNombres());
+        //lastNameUser.setText(usuario.getApellidos());
+        collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsedAppBar);
+        collapsingToolbar.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
+        collapsingToolbar.setTitle(usuario.getNombres() + " " + usuario.getApellidos());
         sexUser.setText(usuario.getSexo());
         birthDayUser.setText(usuario.getFechaNacimiento());
         telephoneUser.setText(usuario.getTelefono());

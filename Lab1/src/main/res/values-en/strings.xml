@@ -35,7 +35,7 @@
     <string name="names">Names</string>
     <string name="other">Other</string>
     <string name="phone">Phone</string>
-    <string name="sex">Sex</string>
+    <string name="sex">Sex:</string>
     <string name="address2">Address:</string>
     <string name="city2">City:</string>
     <string name="lastNames2">Last Name:</string>

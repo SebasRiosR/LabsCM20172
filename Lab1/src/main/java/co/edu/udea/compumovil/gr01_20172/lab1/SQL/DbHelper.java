@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import android.util.Log;
 import co.edu.udea.compumovil.gr01_20172.lab1.Helpers.User;
 
 public class DbHelper extends SQLiteOpenHelper {
@@ -106,6 +106,19 @@ public class DbHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public boolean getUserEmail(String email){
+        String selectQuery = "select * from " + USER_TABLE + " where " +
+                COLUMN_EMAIL + " = " + "'"+email+"'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.getCount() != 0) {
+            return true;
+        }
+        cursor.close();
+        db.close();
+        return false;
+    }
+
     public void updateUser(User user2){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -121,7 +134,8 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(COLUMN_FOTO, user2.getImagen());
         values.put(COLUMN_FECHA_DE_NACIMIENTO, user2.getFechaNacimiento());
 
-        db.update(USER_TABLE, values, COLUMN_ID+"="+user2.getId(), null);
+        int hizoAlgo = db.update(USER_TABLE, values, COLUMN_ID+"="+user2.getId(), null);
+        Log.d("TAG","Afectó "+Integer.toString(hizoAlgo)+ " filas" );
     }
 
     public User getUser2(){

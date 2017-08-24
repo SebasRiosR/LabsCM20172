@@ -39,9 +39,10 @@
     <string name="other">Otro</string>
     <string name="toSign">¿Eres nuevo? Regístrate ahora</string>
     <string name="item">Información</string>
-    <string name="error1">Falta información en algún campo</string>
+    <string name="error1">Falta información en este campo</string>
     <string name="error2">Las contraseñas no coinciden</string>
     <string name="error3">Usuario o contraseña incorrectos</string>
+    <string name="error4">El correo ya se encuentra registrado</string>
     <string name="confirmacion">La cuenta ha sido creada</string>
     <string name="confirmacionUpdate">La cuenta ha sido actualizada</string>
     <string name="image">Agregar imagen</string>
