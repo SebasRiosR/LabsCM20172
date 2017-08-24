@@ -23,7 +23,7 @@
     <string name="cPass">Confirm password</string>
     <string name="city">City</string>
     <string name="confirmacion">The account has been created</string>
-    <string name="error1">Information missing in some field</string>
+    <string name="error1">Information missing in this field</string>
     <string name="error2">Passwords do not match</string>
     <string name="error3">Incorrect user or password</string>
     <string name="fecha_nacimiento">Birth date</string>
@@ -59,4 +59,5 @@
     <string name="modify">Modify</string>
     <string name="title_activity_data_update">Data update</string>
     <string name="error_message_email">Enter Valid Email</string>
+    <string name="error4">The mail is already registered.</string>
 </resources>
